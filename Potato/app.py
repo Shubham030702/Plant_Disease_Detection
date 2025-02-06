@@ -38,7 +38,7 @@ def prediction(image_path, class_names=['Potato___Early_blight', 'Potato___Late_
     img_resized = img.resize((256, 256))
     img_array = tf.keras.preprocessing.image.img_to_array(img_resized)
     img_array = np.expand_dims(img_array, axis=0)  
-    model = tf.keras.models.load_model("Potato/models/model.h5")
+    model = tf.keras.models.load_model("Absolute path for model")
     prediction = model.predict(img_array)
     predicted_class = class_names[np.argmax(prediction)]
     confidence = round(np.max(prediction) * 100, 2)
